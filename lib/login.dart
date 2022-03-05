@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sqi/color.dart';
 import 'package:sqi/resetPassword.dart';
 
 class Login extends StatelessWidget {
@@ -59,7 +60,7 @@ class Login extends StatelessWidget {
                     decoration: BoxDecoration(
                       // border: Border.all(width: 1),
                       borderRadius: BorderRadius.circular(50),
-                      color: Color.fromRGBO(54, 57, 100, .9),
+                      color: deepBlue,
                     ),
                     child: TextButton(
                       // style: ButtonStyle(
