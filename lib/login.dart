@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sqi/color.dart';
+import 'package:sqi/portal.dart';
 import 'package:sqi/resetPassword.dart';
 
 class Login extends StatelessWidget {
@@ -69,7 +70,14 @@ class Login extends StatelessWidget {
                       // backgroundColor:
                       //     MaterialStateProperty.all(Colors.transparent),
                       // ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Portal(),
+                          ),
+                        );
+                      },
                       child: Text(
                         "Login",
                         style: TextStyle(color: Colors.white),
