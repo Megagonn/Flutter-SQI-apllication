@@ -4,6 +4,11 @@ import 'package:sqi/color.dart';
 import 'package:sqi/portal.dart';
 import 'package:sqi/resetPassword.dart';
 
+var pass = true;
+bool showPass() {
+  return pass = false;
+}
+
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -29,13 +34,7 @@ class Login extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  TextFormField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      suffix: Icon(Icons.remove_red_eye_sharp),
-                      labelText: "Password",
-                    ),
-                  ),
+                  PassInp(),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 20),
                     child: Row(
@@ -93,3 +92,36 @@ class Login extends StatelessWidget {
     );
   }
 }
+
+class PassInp extends StatefulWidget {
+  const PassInp({Key? key}) : super(key: key);
+
+  @override
+  _PassInpState createState() => _PassInpState();
+}
+
+class _PassInpState extends State<PassInp> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: TextFormField(
+        obscureText: pass,
+        decoration: InputDecoration(
+          // suffix: IconButton(
+          //   icon: Icon(
+          //     Icons.remove_red_eye_sharp,
+          //   ),
+          //   onPressed: () {
+          //     setState(() {
+          //       showPass();
+                
+          //     });
+          //   },
+          // ),
+          labelText: "Password",
+        ),
+      ),
+    );
+  }
+}
+// pass = true;
