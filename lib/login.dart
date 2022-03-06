@@ -6,7 +6,7 @@ import 'package:sqi/resetPassword.dart';
 
 var pass = true;
 bool showPass() {
-  return pass = false;
+  return pass = !pass;
 }
 
 class Login extends StatelessWidget {
@@ -107,21 +107,20 @@ class _PassInpState extends State<PassInp> {
       child: TextFormField(
         obscureText: pass,
         decoration: InputDecoration(
-          // suffix: IconButton(
-          //   icon: Icon(
-          //     Icons.remove_red_eye_sharp,
-          //   ),
-          //   onPressed: () {
-          //     setState(() {
-          //       showPass();
+          suffix: IconButton(
+            icon: Icon(
+              Icons.remove_red_eye_sharp,
+            ),
+            onPressed: () {
+              setState(() {
+                showPass();
                 
-          //     });
-          //   },
-          // ),
+              });
+            },
+          ),
           labelText: "Password",
         ),
       ),
     );
   }
 }
-// pass = true;
