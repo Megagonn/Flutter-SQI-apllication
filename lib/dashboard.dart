@@ -31,7 +31,14 @@ class _DashboardState extends State<Dashboard> {
       Home(),
       Text('data'),
       Text('data'),
-      Text('data'),
+      Scaffold(
+        bottomSheet: BottomSheet(onClosing: (){}, builder: (context)=>Column(
+          children:[
+            TextButton(onPressed: (){}, child: Text("Help"),),
+            TextButton(onPressed: (){}, child: Text("Log out"),),
+          ]
+        )),
+      ),
     ];
     return Scaffold(
         bottomNavigationBar: WaterDropNavBar(
@@ -40,7 +47,7 @@ class _DashboardState extends State<Dashboard> {
             BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home_outlined),
             BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home_outlined),
             BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home_outlined),
-            BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home_outlined),
+            BarItem(filledIcon: Icons.settings_sharp, outlinedIcon: Icons.settings_outlined),
           ],
           selectedIndex: selectedIndex,
           onItemSelected: (val) {
@@ -55,10 +62,12 @@ class _DashboardState extends State<Dashboard> {
         body: PageView(
           controller: pageController,
           children: views,
-        ));
+        ),);
   }
 
-  void pager(index,) {
+  void pager(
+    index,
+  ) {
     setState(
       () {
         selectedIndex = index;
@@ -67,9 +76,6 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 }
-
-
-
 
 // class Graphe extends StatelessWidget {
 //   const Graphe({ Key? key }) : super(key: key);
@@ -82,8 +88,6 @@ class _DashboardState extends State<Dashboard> {
 //   }
 // }
 
-
-
 // class Feature extends StatelessWidget {
 //   const Feature({ Key? key,required this.data,required this.title,required this.color }) : super(key: key);
 //   final List<double> data;
@@ -92,7 +96,7 @@ class _DashboardState extends State<Dashboard> {
 //   @override
 //   Widget build(BuildContext context) {
 //     return Container(
-      
+
 //     );
 //   }
 // }
@@ -109,3 +113,22 @@ class _DashboardState extends State<Dashboard> {
 //     data: [1, 0.8, 6, 0.7, 0.3, 8],
 //   ),
 // ];
+
+// var list = [
+//   {'wtd': "i want to eat", "time": "9 am"},
+//   {"wtd": "i want to code", "time": "9 am"},
+//   {"wtd": "i want to read", "time": "10 am"},
+//   {"wtd": "i want to dance", "time": "9 pm"},
+// ];
+// var inp;
+// var correctIndex;
+// void a() {
+//   for (var i = 0; i < list.length; i++) {
+//     if (list[i]['wtd'] == inp) {
+//       correctIndex = i;
+//     }
+//   }
+//   print(list[2]);
+//   list.removeAt(correctIndex);
+//   list.insert(correctIndex, {"wtd":"i want to sleep", "time":"11pm"});
+// }
