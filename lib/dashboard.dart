@@ -32,37 +32,46 @@ class _DashboardState extends State<Dashboard> {
       Text('data'),
       Text('data'),
       Scaffold(
-        bottomSheet: BottomSheet(onClosing: (){}, builder: (context)=>Column(
-          children:[
-            TextButton(onPressed: (){}, child: Text("Help"),),
-            TextButton(onPressed: (){}, child: Text("Log out"),),
-          ]
-        )),
+        bottomSheet: BottomSheet(
+            onClosing: () {},
+            builder: (context) => Column(children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("Help"),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("Log out"),
+                  ),
+                ])),
       ),
     ];
     return Scaffold(
-        bottomNavigationBar: WaterDropNavBar(
-          bottomPadding: 10,
-          barItems: [
-            BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home_outlined),
-            BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home_outlined),
-            BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home_outlined),
-            BarItem(filledIcon: Icons.settings_sharp, outlinedIcon: Icons.settings_outlined),
-          ],
-          selectedIndex: selectedIndex,
-          onItemSelected: (val) {
-            setState(() {
-              selectedIndex = val;
-              pager(val);
-            });
-          },
-        ),
-        drawer: MyDrawer(),
-        appBar: AppBar(),
-        body: PageView(
-          controller: pageController,
-          children: views,
-        ),);
+      bottomNavigationBar: WaterDropNavBar(
+        bottomPadding: 10,
+        barItems: [
+          BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home_outlined),
+          BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home_outlined),
+          BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home_outlined),
+          BarItem(
+              filledIcon: Icons.settings_sharp,
+              outlinedIcon: Icons.settings_outlined),
+        ],
+        selectedIndex: selectedIndex,
+        onItemSelected: (val) {
+          setState(() {
+            selectedIndex = val;
+            pager(val);
+          });
+        },
+      ),
+      drawer: MyDrawer(),
+      appBar: AppBar(),
+      body: PageView(
+        controller: pageController,
+        children: views,
+      ),
+    );
   }
 
   void pager(

@@ -4,6 +4,7 @@ import 'package:sqi/color.dart';
 import 'package:sqi/resetPassword.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 import 'dashboard.dart';
+import 'myProfile.dart';
 
 class Portal extends StatelessWidget {
   const Portal({Key? key}) : super(key: key);
@@ -50,7 +51,7 @@ class MyDrawer extends StatelessWidget {
                 Category(text: "General"),
                 Route(icon: Icons.dashboard_sharp, text: "Dashboard", route: Dashboard(),),
                 Category(text: "Profile"),
-                Route(icon: Icons.person_sharp, text: "My Profile", route: Dashboard(),),
+                Route(icon: Icons.person_sharp, text: "My Profile", route: MyProfile(),),
                 Route(icon: Icons.lock_outline_sharp, text: "Change Password", route: Reset(),),
                 Route(icon: Icons.folder_sharp, text: "Documents", route: Dashboard(),),
                 Category(text: "Academics"),
