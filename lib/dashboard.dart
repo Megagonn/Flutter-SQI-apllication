@@ -74,9 +74,7 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
-  void pager(
-    index,
-  ) {
+  void pager(index,) {
     setState(
       () {
         selectedIndex = index;

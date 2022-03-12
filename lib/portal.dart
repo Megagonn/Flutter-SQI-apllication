@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sqi/color.dart';
+import 'package:sqi/election.dart';
+import 'package:sqi/help.dart';
 import 'package:sqi/resetPassword.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 import 'dashboard.dart';
@@ -66,8 +68,8 @@ class MyDrawer extends StatelessWidget {
                 Route(icon: Icons.history_sharp, text: "Payments History", route: Dashboard(),),
                 Category(text: "Others"),
                 Route(icon: Icons.home_sharp, text: "Accomodation", route: Dashboard(),),
-                Route(icon: Icons.check_sharp, text: "Election", route: Dashboard(),),
-                Route(icon: Icons.help_outline_sharp, text: "Help", route: Dashboard(),),
+                Route(icon: Icons.check_sharp, text: "Election", route: Election(),),
+                Route(icon: Icons.help_outline_sharp, text: "Help", route: Help(),),
                 Route(icon: Icons.logout_sharp, text: "Logout", route: Dashboard(),),
               ],
             ),
