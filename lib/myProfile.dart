@@ -17,7 +17,7 @@ class MyProfile extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.symmetric(vertical: 10),
+              margin: EdgeInsets.symmetric(vertical: 4),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -33,7 +33,7 @@ class MyProfile extends StatelessWidget {
                         top: 30,
                         right: 0,
                         child: Icon(
-                          Icons.photo_camera_outlined,
+                          Icons.photo_camera,
                           color: deepBlue,
                         ),
                       ),
@@ -47,7 +47,7 @@ class MyProfile extends StatelessWidget {
                 children: [
                   Flexible(
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         CircleAvatar(
                           backgroundColor: deepBlue,
@@ -62,7 +62,7 @@ class MyProfile extends StatelessWidget {
                   ),
                   Flexible(
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         CircleAvatar(
                           backgroundColor: lgrey,
@@ -77,10 +77,10 @@ class MyProfile extends StatelessWidget {
                   ),
                   Flexible(
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         CircleAvatar(
-                          backgroundColor: deepBlue,
+                          backgroundColor: lgrey,
                           child: Text("3"),
                         ),
                         Text(
@@ -100,7 +100,7 @@ class MyProfile extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      margin: EdgeInsets.symmetric(vertical: 10),
+                      margin: EdgeInsets.symmetric(vertical: 4),
                       child: TextField(
                         decoration: InputDecoration(
                           labelText: "Surname",
@@ -111,7 +111,7 @@ class MyProfile extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.symmetric(vertical: 10),
+                      margin: EdgeInsets.symmetric(vertical: 4),
                       child: TextField(
                         decoration: InputDecoration(
                           labelText: "First Name",
@@ -122,7 +122,7 @@ class MyProfile extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.symmetric(vertical: 10),
+                      margin: EdgeInsets.symmetric(vertical: 4),
                       child: TextField(
                         decoration: InputDecoration(
                           labelText: "Middle Name",
@@ -133,7 +133,7 @@ class MyProfile extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.symmetric(vertical: 10),
+                      margin: EdgeInsets.symmetric(vertical: 4),
                       child: TextField(
                         decoration: InputDecoration(
                           labelText: "Date of Birth",
@@ -184,7 +184,8 @@ class MyProfile extends StatelessWidget {
                           state = val!;
                         },
                         // hint: Text(""),
-                        decoration: InputDecoration(labelText: "State of Origin"),
+                        decoration:
+                            InputDecoration(labelText: "State of Origin"),
                         items: [
                           DropdownMenuItem(
                             child: Text("Abia"),
@@ -278,7 +279,8 @@ class MyProfile extends StatelessWidget {
                           maritalStatus = val!;
                         },
                         // hint: Text(""),
-                        decoration: InputDecoration(labelText: "Marital Status"),
+                        decoration:
+                            InputDecoration(labelText: "Marital Status"),
                         items: [
                           DropdownMenuItem(
                             child: Text("Single"),
@@ -292,6 +294,192 @@ class MyProfile extends StatelessWidget {
                             child: Text("Divorce"),
                             value: "Divorce",
                           ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.forward_outlined),
+        backgroundColor: deepBlue,
+      ),
+    );
+  }
+}
+
+class Contact extends StatelessWidget {
+  const Contact({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 4),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("PROFILE"),
+                  Stack(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundColor: white,
+                        child: Icon(Icons.person_sharp),
+                      ),
+                      Positioned(
+                        top: 30,
+                        right: 0,
+                        child: Icon(
+                          Icons.photo_camera,
+                          color: deepBlue,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            Container(
+              child: Row(
+                children: [
+                  Flexible(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: deepBlue,
+                          child: Icon(Icons.edit_sharp),
+                        ),
+                        Text(
+                          "Personal Data",
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Flexible(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: deepBlue,
+                          child: Text("2"),
+                        ),
+                        Text(
+                          "Contact",
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Flexible(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: lgrey,
+                          child: Text("3"),
+                        ),
+                        Text(
+                          "Referee",
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height - 200,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 4),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: "Phone 1",
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(style: BorderStyle.none),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 4),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: "Phone 2",
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(style: BorderStyle.none),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 4),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: "Email",
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(style: BorderStyle.none),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 4),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: "Address",
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(style: BorderStyle.none),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 4),
+                      child: Row(
+                        children: [
+                          ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(deepBlue),
+                            ),
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MyProfile(),
+                                ),
+                              );
+                            },
+                            child: Text(
+                              "Previous",
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 4,),
+                            child: ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(deepBlue),
+                              ),
+                                onPressed: () {
+
+                                }, child: Text("Next"),),
+                          )
                         ],
                       ),
                     ),
