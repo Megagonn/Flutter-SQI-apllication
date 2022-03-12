@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:sqi/color.dart';
+import 'package:sqi/dashboard.dart';
 
 class MyProfile extends StatelessWidget {
   const MyProfile({Key? key}) : super(key: key);
@@ -305,7 +307,14 @@ class MyProfile extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Contact(),
+            ),
+          );
+        },
         child: Icon(Icons.forward_outlined),
         backgroundColor: deepBlue,
       ),
@@ -456,7 +465,8 @@ class Contact extends StatelessWidget {
                         children: [
                           ElevatedButton(
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(deepBlue),
+                              backgroundColor:
+                                  MaterialStateProperty.all(deepBlue),
                             ),
                             onPressed: () {
                               Navigator.pushReplacement(
@@ -471,14 +481,24 @@ class Contact extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.symmetric(horizontal: 4,),
+                            margin: EdgeInsets.symmetric(
+                              horizontal: 4,
+                            ),
                             child: ElevatedButton(
                               style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(deepBlue),
+                                backgroundColor:
+                                    MaterialStateProperty.all(deepBlue),
                               ),
-                                onPressed: () {
-
-                                }, child: Text("Next"),),
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Referee(),
+                                  ),
+                                );
+                              },
+                              child: Text("Next"),
+                            ),
                           )
                         ],
                       ),
@@ -489,6 +509,176 @@ class Contact extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Referee extends StatelessWidget {
+  const Referee({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 4),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("PROFILE"),
+                  Stack(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundColor: white,
+                        child: Icon(Icons.person_sharp),
+                      ),
+                      Positioned(
+                        top: 30,
+                        right: 0,
+                        child: Icon(
+                          Icons.photo_camera,
+                          color: deepBlue,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            Container(
+              child: Row(
+                children: [
+                  Flexible(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: deepBlue,
+                          child: Icon(Icons.edit_sharp),
+                        ),
+                        Text(
+                          "Personal Data",
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Flexible(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: deepBlue,
+                          child: Icon(Icons.edit_sharp),
+                        ),
+                        Text(
+                          "Contact",
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Flexible(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: deepBlue,
+                          child: Text("3"),
+                        ),
+                        Text(
+                          "Referee",
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height - 200,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 4),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: "Full Name",
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(style: BorderStyle.none),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 4),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: "Office Phone",
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(style: BorderStyle.none),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 4),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: "Email",
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(style: BorderStyle.none),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.topLeft,
+                      margin: EdgeInsets.symmetric(vertical: 4),
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(deepBlue),
+                        ),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Contact(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Previous",
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Dashboard(),
+            ),
+          );
+        },
+        child: Icon(Icons.send_sharp),
+        backgroundColor: deepBlue,
       ),
     );
   }
