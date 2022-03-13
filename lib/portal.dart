@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sqi/color.dart';
+import 'package:sqi/courseReg.dart';
 import 'package:sqi/election.dart';
 import 'package:sqi/help.dart';
 import 'package:sqi/login.dart';
+import 'package:sqi/regHistory.dart';
 import 'package:sqi/resetPassword.dart';
+import 'package:sqi/semesterresult.dart';
 import 'package:sqi/ttable.dart';
 import 'package:sqi/utilities.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
@@ -60,10 +63,10 @@ class MyDrawer extends StatelessWidget {
                 Route(icon: Icons.lock_outline_sharp, text: "Change Password", route: Reset(),),
                 Route(icon: Icons.folder_sharp, text: "Documents", route: Dashboard(),),
                 Category(text: "Academics"),
-                Route(icon: Icons.notifications_none_rounded, text: "Course Registration", route: Dashboard(),),
+                Route(icon: Icons.notifications_none_rounded, text: "Course Registration", route: CourseReg(),),
                 Route(icon: Icons.folder_open_sharp, text: "Resources", route: Dashboard(),),
-                Route(icon: Icons.app_registration_sharp, text: "Registration History", route: Dashboard(),),
-                Route(icon: Icons.checklist_rtl_sharp, text: "Semester Result", route: Dashboard(),),
+                Route(icon: Icons.app_registration_sharp, text: "Registration History", route: RegHistory(),),
+                Route(icon: Icons.checklist_rtl_sharp, text: "Semester Result", route: SemResult(),),
                 Route(icon: Icons.table_chart_sharp, text: "View Timetable", route: TimeTable(),),
                 Category(text: "Payments"),
                 Route(icon: Icons.payment_rounded, text: "Pay Tuition", route: TuitionPayment(),),
