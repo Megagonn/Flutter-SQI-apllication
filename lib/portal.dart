@@ -4,6 +4,7 @@ import 'package:sqi/color.dart';
 import 'package:sqi/election.dart';
 import 'package:sqi/help.dart';
 import 'package:sqi/resetPassword.dart';
+import 'package:sqi/utilities.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 import 'dashboard.dart';
 import 'myProfile.dart';
@@ -63,8 +64,8 @@ class MyDrawer extends StatelessWidget {
                 Route(icon: Icons.checklist_rtl_sharp, text: "Semester Result", route: Dashboard(),),
                 Route(icon: Icons.table_chart_sharp, text: "View Timetable", route: Dashboard(),),
                 Category(text: "Payments"),
-                Route(icon: Icons.payment_rounded, text: "Pay Tuition", route: Dashboard(),),
-                Route(icon: Icons.payments_sharp, text: "Other Payments", route: Dashboard(),),
+                Route(icon: Icons.payment_rounded, text: "Pay Tuition", route: TuitionPayment(),),
+                Route(icon: Icons.payments_sharp, text: "Other Payments", route: TuitionPayment(),),
                 Route(icon: Icons.history_sharp, text: "Payments History", route: Dashboard(),),
                 Category(text: "Others"),
                 Route(icon: Icons.home_sharp, text: "Accomodation", route: Dashboard(),),

@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sqi/portal.dart';
 
 import 'color.dart';
 import 'dashboard.dart';
 
 class Home extends StatelessWidget {
-  const Home({ Key? key }) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -189,6 +190,45 @@ class MyCard extends StatelessWidget {
                 ],
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TuitionPayment extends StatelessWidget {
+  const TuitionPayment({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        drawer: MyDrawer(),
+        appBar: AppBar(),
+        body: Container(
+          alignment: Alignment.topCenter,
+          padding: EdgeInsets.all(8),
+          child: Container(
+            padding: EdgeInsets.all(10),
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  child: Text(
+                    "TUITION PAYMENT",
+                    style: TextStyle(fontWeight: FontWeight.w400),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  child: Text(
+                    "You don not have any payment to make yet",
+                    style: TextStyle(fontWeight: FontWeight.w800),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
