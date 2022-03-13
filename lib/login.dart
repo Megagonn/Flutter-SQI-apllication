@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sqi/color.dart';
+import 'package:sqi/dashboard.dart';
 import 'package:sqi/portal.dart';
 import 'package:sqi/resetPassword.dart';
 
@@ -73,7 +74,7 @@ class Login extends StatelessWidget {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Portal(),
+                            builder: (context) => Dashboard(),
                           ),
                         );
                       },
