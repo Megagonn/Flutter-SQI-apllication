@@ -15,32 +15,30 @@ class SemResult extends StatelessWidget {
         appBar: AppBar(),
         drawer: MyDrawer(),
         body: Container(
-          margin: EdgeInsets.all(8),
-          decoration: BoxDecoration(boxShadow: [
-            BoxShadow(color: lgrey, blurRadius: .5, spreadRadius: 1),
-          ], borderRadius: BorderRadius.circular(4)),
-          padding: EdgeInsets.all(20),
-          child: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text("SEMESTER RESULT"),
-                Container(
-                  margin: EdgeInsets.all(8),
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(boxShadow: [
-                    BoxShadow(color: lgrey, blurRadius: .5, spreadRadius: 1),
-                  ], borderRadius: BorderRadius.circular(4)),
-                  child: Text("No result yet"),
-                )
-              ],
-            ),
+          height: 200,
+          margin: EdgeInsets.all(20),
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: white,
+            boxShadow: [BoxShadow(color: lgrey, spreadRadius: 1, blurRadius: .5)]
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text("SEMESTER RESULT"),
+               SizedBox(
+                child: Container(color: lgrey,),
+                width: MediaQuery.of(context).size.width,
+                height:2
+              ),
+              SizedBox(height: 15,),
+              Text("No result yet")
+            ],
           ),
         ),
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {
-          },
-          label: Icon(Icons.print_sharp),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.print_sharp),
           backgroundColor: deepBlue,
         ),
       ),
