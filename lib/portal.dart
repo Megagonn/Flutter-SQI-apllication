@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:sqi/color.dart';
 import 'package:sqi/election.dart';
 import 'package:sqi/help.dart';
+import 'package:sqi/login.dart';
 import 'package:sqi/resetPassword.dart';
+import 'package:sqi/ttable.dart';
 import 'package:sqi/utilities.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 import 'dashboard.dart';
@@ -62,7 +64,7 @@ class MyDrawer extends StatelessWidget {
                 Route(icon: Icons.folder_open_sharp, text: "Resources", route: Dashboard(),),
                 Route(icon: Icons.app_registration_sharp, text: "Registration History", route: Dashboard(),),
                 Route(icon: Icons.checklist_rtl_sharp, text: "Semester Result", route: Dashboard(),),
-                Route(icon: Icons.table_chart_sharp, text: "View Timetable", route: Dashboard(),),
+                Route(icon: Icons.table_chart_sharp, text: "View Timetable", route: TimeTable(),),
                 Category(text: "Payments"),
                 Route(icon: Icons.payment_rounded, text: "Pay Tuition", route: TuitionPayment(),),
                 Route(icon: Icons.payments_sharp, text: "Other Payments", route: TuitionPayment(),),
@@ -71,7 +73,7 @@ class MyDrawer extends StatelessWidget {
                 Route(icon: Icons.home_sharp, text: "Accomodation", route: Dashboard(),),
                 Route(icon: Icons.check_sharp, text: "Election", route: Election(),),
                 Route(icon: Icons.help_outline_sharp, text: "Help", route: Help(),),
-                Route(icon: Icons.logout_sharp, text: "Logout", route: Dashboard(),),
+                Route(icon: Icons.logout_sharp, text: "Logout", route: Login(),),
               ],
             ),
           ),
