@@ -96,7 +96,7 @@ class MyProfile extends StatelessWidget {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height - 200,
+              height: MediaQuery.of(context).size.height - 300,
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -669,7 +669,7 @@ class Referee extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          
+
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(

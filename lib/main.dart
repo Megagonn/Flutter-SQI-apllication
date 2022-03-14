@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: 
+      home: Onboard(),
       // OnBoard(),
       // Reset(),
-      Login(),
+      // Login(),
     );
   }
 }

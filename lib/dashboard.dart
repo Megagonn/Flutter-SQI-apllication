@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sqi/color.dart';
 import 'package:draw_graph/draw_graph.dart';
 import 'package:draw_graph/models/feature.dart';
+import 'package:sqi/myProfile.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 
 import 'portal.dart';
@@ -29,8 +30,8 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     List<Widget> views = [
       Home(),
-      Text('data'),
-      Text('data'),
+      MyProfile(),
+      TuitionPayment2(),
       Scaffold(
         bottomSheet: BottomSheet(
             onClosing: () {},
@@ -51,8 +52,8 @@ class _DashboardState extends State<Dashboard> {
         bottomPadding: 10,
         barItems: [
           BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home_outlined),
-          BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home_outlined),
-          BarItem(filledIcon: Icons.home, outlinedIcon: Icons.home_outlined),
+          BarItem(filledIcon: Icons.person, outlinedIcon: Icons.person_outline),
+          BarItem(filledIcon: Icons.payment_outlined, outlinedIcon: Icons.payment_sharp),
           BarItem(
               filledIcon: Icons.settings_sharp,
               outlinedIcon: Icons.settings_outlined),

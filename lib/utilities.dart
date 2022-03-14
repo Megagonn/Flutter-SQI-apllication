@@ -223,7 +223,45 @@ class TuitionPayment extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 10),
                   child: Text(
-                    "You don not have any payment to make yet",
+                    "You do not have any payment to make yet",
+                    style: TextStyle(fontWeight: FontWeight.w800),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TuitionPayment2 extends StatelessWidget {
+  const TuitionPayment2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        
+        body: Container(
+          alignment: Alignment.topCenter,
+          padding: EdgeInsets.all(8),
+          child: Container(
+            padding: EdgeInsets.all(10),
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  child: Text(
+                    "TUITION PAYMENT",
+                    style: TextStyle(fontWeight: FontWeight.w400),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  child: Text(
+                    "You do not have any payment to make yet",
                     style: TextStyle(fontWeight: FontWeight.w800),
                   ),
                 ),
