@@ -47,7 +47,7 @@ class MyDrawer extends StatelessWidget {
                     child: Column(
                       children: [
                         Image(
-                          image: AssetImage("sqi.png"),
+                          image: AssetImage("assets/sqi.png"),
                         ),
                         Text(
                           "SCICT",
