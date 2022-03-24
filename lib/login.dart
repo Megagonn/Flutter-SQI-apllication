@@ -10,8 +10,21 @@ bool showPass() {
   return pass = !pass;
 }
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
+
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  GlobalKey formKey = GlobalKey<FormState>();
+
+  final _formKey = GlobalKey<FormState>();
+
+  bool submit() {
+    return _formKey.currentState!.validate();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +43,22 @@ class Login extends StatelessWidget {
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height/2,
+                height: MediaQuery.of(context).size.height / 2,
                 child: ListView(
                   scrollDirection: Axis.vertical,
                   children: [
-                    TextFormField(
-                      keyboardAppearance: Brightness.dark,
-                      keyboardType: TextInputType.numberWithOptions(),
-                        decoration: InputDecoration(labelText: "Student ID")),
+                    Form(
+                      key: _formKey,
+                      child: TextFormField(
+                          validator: (val) {
+                            return val.toString().length < 6
+                                ? "ID must be 6 character"
+                                : null;
+                          },
+                          keyboardAppearance: Brightness.dark,
+                          keyboardType: TextInputType.numberWithOptions(),
+                          decoration: InputDecoration(labelText: "Student ID")),
+                    ),
                     SizedBox(
                       height: 10,
                     ),
@@ -65,24 +86,19 @@ class Login extends StatelessWidget {
                       width: double.infinity,
                       padding: EdgeInsets.symmetric(vertical: 10),
                       decoration: BoxDecoration(
-                        // border: Border.all(width: 1),
                         borderRadius: BorderRadius.circular(50),
                         color: deepBlue,
                       ),
                       child: TextButton(
-                        // style: ButtonStyle(
-                        // padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 10)),
-                        // elevation: MaterialStateProperty.all(2),
-                        // backgroundColor:
-                        //     MaterialStateProperty.all(Colors.transparent),
-                        // ),
                         onPressed: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Dashboard(),
-                            ),
-                          );
+                          submit()
+                              ? Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Dashboard(),
+                                  ),
+                                )
+                              : (){};
                         },
                         child: Text(
                           "Login",
@@ -122,7 +138,6 @@ class _PassInpState extends State<PassInp> {
             onPressed: () {
               setState(() {
                 showPass();
-                
               });
             },
           ),
